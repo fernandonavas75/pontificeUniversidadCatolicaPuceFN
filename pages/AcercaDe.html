@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Video Player</title>
+    <style>
+        /* CSS en línea dentro de <style> */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        #play-pause {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        #progress {
+            margin: 0 10px;
+            width: 300px;
+        }
+
+        #timestamp {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-container">
+        <video id="video" width="640" height="360">
+            <source src="/video/trailer.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="controls">
+            <button id="play-pause">Play</button>
+            <input id="progress" type="range" min="0" max="100" value="0">
+            <span id="timestamp">0:00</span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript en línea dentro de <script>
+        const video = document.getElementById('video');
+        const playPauseButton = document.getElementById('play-pause');
+        const progress = document.getElementById('progress');
+        const timestamp = document.getElementById('timestamp');
+
+        // Alterna entre reproducir y pausar
+        function togglePlayPause() {
+            if (video.paused || video.ended) {
+                video.play();
+                playPauseButton.textContent = 'Pause';
+            } else {
+                video.pause();
+                playPauseButton.textContent = 'Play';
+            }
+        }
+
+        // Actualiza la barra de progreso y la marca de tiempo
+        function updateProgress() {
+            const progressValue = (video.currentTime / video.duration) * 100;
+            progress.value = progressValue || 0;
+            const minutes = Math.floor(video.currentTime / 60);
+            const seconds = Math.floor(video.currentTime % 60);
+            timestamp.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Permite avanzar o retroceder el video usando la barra de progreso
+        function setVideoProgress() {
+            const newTime = (progress.value / 100) * video.duration;
+            video.currentTime = newTime;
+        }
+
+        // Eventos
+        playPauseButton.addEventListener('click', togglePlayPause);
+        video.addEventListener('timeupdate', updateProgress);
+        progress.addEventListener('input', setVideoProgress);
+    </script>
+</body>
+</html>
