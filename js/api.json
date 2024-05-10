@@ -1,0 +1,75 @@
+[
+    {
+      "id" : 1,
+      "precio" : "150000",
+      "title" : "Mercedes 1",
+      "img" : "/images/carro4.jpg"
+  
+    },
+    {
+      "id": 2,
+      "precio": "12",
+      "title": "Mercedes 2",
+      "img": "/images/carro1.jpg"
+    },
+    {
+      "id": 3,
+      "precio": "10",
+      "title": "Mercedes 3",
+      "img": "/images/carro2.jpg"
+    },
+    {
+      "id": 4,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro3.jpg"
+    },
+    {
+      "id": 5,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro4.jpg"
+    },
+    {
+      "id": 6,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro1.jpg"
+    },
+    {
+      "id": 7,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro2.jpg"
+    },
+    {
+      "id": 8,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro3.jpg"
+    },
+    {
+      "id": 9,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro4.jpg"
+    },
+    {
+      "id": 10,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro1.jpg"
+    },
+    {
+      "id": 11,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro2.jpg"
+    },
+    {
+      "id": 12,
+      "precio": "15",
+      "title": "Lambo Urus",
+      "img": "/images/carro3.jpg"
+    }
+  ]

@@ -32,11 +32,33 @@
 						<a href="#" id="user-link">
 							<i class="fa-solid fa-user"></i>
 						</a>
-						<i class="fa-solid fa-basket-shopping"></i>
-						<div class="content-shopping-cart">
-							<span class="text">Carrito</span>
-							<span class="number">(0)</span>
-						</div>
+						
+						<li class="submenu">
+							<i class="fa-solid fa-basket-shopping"></i>
+							<div class="content-shopping-cart">
+								<!-- <span class="text">Carrito</span> -->
+								<span class="number" id="cantidad-carrito">(0)</span>
+								<div id="carrito">
+									<p class="vacio"></p>
+									<table id='lista-carrito' class="u-full-width">
+										<thead>
+											<tr>
+												<th>Imagen</th>
+												<th>Platillos</th>
+												<th>Precio</th>
+												 <th>Cantidad</th>
+											</tr>
+										</thead>
+										<tbody >
+										 
+										</tbody>
+									</table>
+									
+									<a href="#" id='vaciar-carrito' class="button u-full-width">vaciar carrito</a>
+								</div>
+							</div>
+						</li>
+						
 					</div>
 				</div>
 			</div>
@@ -46,9 +68,9 @@
 					<i class="fa-solid fa-bars"></i>
 					<ul class="menu">
 						<li><a href="/index.html">Inicio</a></li>
-						<li><a href="#">Motos</a></li>
-						<li><a href="#">Carros</a></li>
-						<li><a href="#">Aviones</a></li>
+						<li><a href="/pages/motos.html">Motos</a></li>
+						<li><a href="/pages/carros.html">Carros</a></li>
+						<li><a href="/pages/aviones.html">Aviones</a></li>
 					</ul>
 
 					<form class="search-form">
