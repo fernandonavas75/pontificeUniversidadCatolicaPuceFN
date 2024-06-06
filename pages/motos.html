@@ -31,15 +31,15 @@
                                             <th>Imagen</th>
                                             <th>Platillos</th>
                                             <th>Precio</th>
-                                             <th>Cantidad</th>
+                                            <th>Cantidad</th>
                                         </tr>
                                     </thead>
                                     <tbody >
-                                     
                                     </tbody>
                                 </table>
                                 
                                 <a href="#" id='vaciar-carrito' class="button u-full-width">vaciar carrito</a>
+                                <a href="#" id='comprar-carrito' class="button u-full-width">Comprar</a>
                             </div>
                         </li>
                     </ul>
@@ -49,8 +49,8 @@
     </header>
 
     <div class="hero">
-        <div class="container"> 
-            <div class="row">  
+        <div class="container">
+            <div class="row">
                 <div class="six columns">
                 </div>
             </div>
@@ -63,40 +63,39 @@
 
     <div id="lista-platillos" class="container">
         <h1 class="encabezado">Pedidos en Linea</h1>
-          <div class=" " id='content-products'>
-
-          </div>
-       
+        <div class=" " id='content-products'>
+        </div>
         </div>
 
     </div>
+    
     <template id='template-products'>
         <div class="four columns ">
                 <div class="card">
-                    <img src="/images/platillo2.jpg" class="imagen-platillo u-full-width">
+                    <img src="" class="imagen-platillo u-full-width" alt="imagen no encontrada">
                     <div class="info-card">
                         <h4>Hamburguesa con helado</h4>
-                        <p>Bebida ilimitada</p>
+                        <p class="stock">Calificacion</strong></p>
                         <img src="/images/estrellas.png">
+                        <p class="Stock">Stock: <span class="stocku">Unidades</span></p>
                         <p class="precio">$50 <span class="u-pull-right">$ <strong> 50</strong></span> </p>
                         <a href="#" class="u-full-width button-primary button input agregar-carrito" >Agregar al carrito</a>
                     </div>
                 </div>
             </div>
     </template>
-   <template id='template-carrito'>
-       
-           <tr >
-               <td >
-                   <img  src="/images/estrellas.png" width=100> 
-               </td> 
-               <td>we</td>
-               <td >wew</td>
-               <td > $<span></span></td>
-               <td >
-                   <a href="#" class="borrar-platillo" data-id="">X</a>
-               </td>
-           </tr>
+<template id='template-carrito'>
+        <tr >
+            <td >
+                <img  src="/images/estrellas.png" width=100> 
+            </td>
+            <td>we</td>
+            <td >wew</td>
+            <td > $<span></span></td>
+            <td >
+            <a href="#" class="borrar-platillo" data-id="">X</a>
+            </td>
+        </tr>
     </template>
 
     <footer class="footer"> 

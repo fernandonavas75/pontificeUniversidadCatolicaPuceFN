@@ -40,6 +40,7 @@ const cargarProductos = (data) => {
     templateProductos.querySelector(".u-pull-right strong").textContent =
       producto.precio;
     templateProductos.querySelector("a").setAttribute("data-id", producto.id);
+   templateProductos.querySelector(".stocku").textContent=producto.stock; //agregacion de stock
     const productos = templateProductos.cloneNode(true);
     fragment.appendChild(productos);
   });
@@ -47,15 +48,13 @@ const cargarProductos = (data) => {
 };
 const fetchData = async () => {
   try {
-    const resp = await fetch("/js/api.json");
+    const resp = await fetch("http://localhost:3000/productos"); // Cambia la ruta para obtener los datos del backend
     const data = await resp.json();
-
-    cargarProductos(data);
+    cargarProductos(data); // Cargar productos desde el JSON obtenido del backend
   } catch (error) {
     console.log(error);
   }
 };
-
 function addCarrito(e) {
   e.preventDefault();
   if (e.target.classList.contains("agregar-carrito")) {
