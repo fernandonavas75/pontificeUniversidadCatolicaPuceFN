@@ -1,3 +1,4 @@
+/*
 const signupForm = document.querySelector('#signupForm')
 signupForm.addEventListener('submit', (e)=>{
     e.preventDefault()
@@ -17,3 +18,36 @@ signupForm.addEventListener('submit', (e)=>{
     window.location.href = 'login.html'
 
 })
+    */
+document.querySelector('#signupForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = document.querySelector('#name').value;
+    const email = document.querySelector('#email').value;
+    const password = document.querySelector('#password').value;
+
+    try {
+        const response = await fetch('http://localhost:3000/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                user: email, // Usar email como user
+                password: password
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message);
+            window.location.href = 'login.html';
+        } else {
+            alert(data.error || 'Error en el registro');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error en el registro');
+    }
+});

@@ -168,3 +168,31 @@ function vaciarLocalStorage() {
   localStorage.setItem("carrito", JSON.stringify({}));
   localStorage.setItem("cantidad", JSON.stringify(0));
 }
+
+//boton carrito comprar//
+document.getElementById("comprar-carrito").addEventListener("click", async () => {
+  const carrito = JSON.parse(localStorage.getItem("carrito"));
+  if (carrito && Object.keys(carrito).length > 0) {
+    try {
+      const res = await fetch("http://localhost:3000/carrito/comprar", {
+        method: "POST",
+        body: JSON.stringify(carrito),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+      if (res.ok) {
+        vaciarLocalStorage();
+        window.location.href = "http://127.0.0.1:5502/pages/compra-exitosa.html";
+        return res.ok;
+      } else {
+        console.error('Error en la respuesta del servidor:', res.statusText);
+      }
+    } catch (error) {
+      console.error('Error en la solicitud fetch:', error);
+    }
+  } else {
+    console.log('El carrito está vacío');
+  }
+  return false;
+});
